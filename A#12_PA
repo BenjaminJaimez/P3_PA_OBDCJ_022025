@@ -1,0 +1,48 @@
+{ 
+        DateTime horaEstablecida = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 
+DateTime.Now.Day, 9, 0, 0); // 9 AM 
+        public Form1()  
+ 
+
+ 
+        { 
+            InitializeComponent(); 
+        } 
+ 
+        private void btnEvaluar_Click(object sender, EventArgs e) 
+        { 
+            DateTime horaInicio = DateTime.Parse(txtHoraInicio.Text);             DateTime
+horaFin = DateTime.Parse(txtHoraFin.Text); 
+ 
+            if (horaInicio <= horaEstablecida) 
+            { 
+                MessageBox.Show("El horario de inicio es puntual."); 
+            }            
+else 
+            { 
+                MessageBox.Show("Ingresó tarde."); 
+            } 
+ 
+            if (horaFin < horaEstablecida) 
+            { 
+                MessageBox.Show("Se está concluyendo antes."); 
+            } 
+            else if (horaFin == horaEstablecida) 
+            { 
+                MessageBox.Show("Se está concluyendo a tiempo."); 
+            }            
+else             { 
+                MessageBox.Show("Le tomó más tiempo completar el proceso."); 
+            } 
+        } 
+ 
+        private void Form1_Load(object sender, EventArgs e)  
+ 
+
+ 
+        { 
+ 
+        } 
+    } 
+ 
+ 
