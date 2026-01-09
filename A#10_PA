@@ -1,0 +1,61 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("=== EJERCICIOS EN .NET ===");
+        Console.WriteLine();
+        
+        // Ejercicio 1: Conversión Celsius a Fahrenheit
+        Console.WriteLine("1. CONVERSIÓN CELSIUS A FAHRENHEIT");
+        Console.Write("Ingrese grados Celsius: ");
+        double celsius = Convert.ToDouble(Console.ReadLine());
+        double fahrenheit = CelsiusToFahrenheit(celsius);
+        Console.WriteLine($"{celsius}°C = {fahrenheit}°F");
+        Console.WriteLine();
+        
+        // Ejercicio 2: Invertir dígitos
+        Console.WriteLine("2. INVERTIR DÍGITOS");
+        Console.Write("Ingrese un número entero: ");
+        int numero = Convert.ToInt32(Console.ReadLine());
+        int invertido = InvertirDigitos(numero);
+        Console.WriteLine($"Número original: {numero}");
+        Console.WriteLine($"Número invertido: {invertido}");
+        Console.WriteLine();
+        
+        // Ejercicio 3: Contar cifras
+        Console.WriteLine("3. CONTAR CIFRAS");
+        Console.Write("Ingrese un número entero positivo: ");
+        int numeroContar = Convert.ToInt32(Console.ReadLine());
+        if (numeroContar > 0)
+        {
+            int cantidadCifras = ContarCifras(numeroContar);
+            Console.WriteLine($"El número {numeroContar} tiene {cantidadCifras} cifras");
+        }
+        else
+        {
+            Console.WriteLine("Error: El número debe ser positivo");
+        }
+    }
+    
+    // Método para convertir Celsius a Fahrenheit
+    public static double CelsiusToFahrenheit(double celsius)
+    {
+        return (celsius * 9/5) + 32;
+    }
+    
+    // Método para invertir dígitos
+    public static int InvertirDigitos(int numero)
+    {
+        char[] digitos = numero.ToString().ToCharArray();
+        Array.Reverse(digitos);
+        return Convert.ToInt32(new string(digitos));
+    }
+    
+    // Método para contar cifras
+    public static int ContarCifras(int numero)
+    {
+        return numero.ToString().Length;
+    }
+}
